@@ -37,7 +37,7 @@ router.post("/register", async (req, res) => {
 
     const usuarios = await User.findAndCountAll();
     console.log("Existen:" + usuarios.count + " usuarios en base de datos.");
-    let tipo_usuario = "NORMAL";
+    let tipo_usuario = "PATIENT";
     if (usuarios.count == 0)
         tipo_usuario = "DOCTOR"
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">   
+
+        <%- include('templates/header', {titulo: "Pagina Usuario Pro"}) %>
+
+<body>
+   
+    <%- include('templates/menu') %>
+
+        <div class="container">
+            <br>
+            <br>
+            
+                <form  id="formulario" action="/newappointement" method="POST">
+                    <div class="input-group">
+                        
+                        <div class="row">  
+                            <div class="col-6">
+                                <input required id="date" type="date" name="date"   class="form-control">
+                            </div>  
+                            <div class="col-6">
+                                <input required id="time" type="time" name="time"   class="form-control">
+                            </div>
+                        </div>
+                    </div>              
+                    
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label" ></label><br>
+                        <br>
+                        <textarea required placeholder="complain" class="form-control" id="textarea" rows="3" name= "complain"></textarea>
+                    </div class="col-6 offset-md-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary">Add Appointement</button>
+                            </div>
+                            <div class="col-6">
+                                <input type="reset" class="btn btn-primary" value="cancel">                            
+                            </div>
+                    </div>
+                </form>
+            
+        </div>
+
+</body>
+</html>

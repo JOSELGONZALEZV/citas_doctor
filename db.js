@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const { Model, DataTypes, Deferrable } = require("sequelize");
 const clave = require('./secret')
+const moment = require('moment'); // require
 
 // acá creamos la conexión a la Base de Datos
 const sql = new Sequelize('db_doc_cites', 'root', clave.clave, {
@@ -73,21 +74,20 @@ const Cite = sql.define('Cite', {
     date: {
         type: Sequelize.DATEONLY,
         allowNull: false,
-        defaultValue: DataTypes.NOW,
         validate: {
             notNull: {  
-                msg: 'debe ingresar un mensaje',            
-                format: 'MM,dd,yy'
+                isDate: true,
+                isBefore: moment().add(1, 'days'),       
+                msg: 'debe ingresar una fecha',
             }
         }
     },
     time: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
             notNull: {  
                 msg: 'debe ingresar una hora',
-                format: 'HH,mm'
             }
             
         }

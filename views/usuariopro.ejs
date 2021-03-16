@@ -11,33 +11,38 @@
     <h1>Doctor's Appointments</h1>
         <div class="container">
             <div class="col">
-            <table class="table-primary table-striped table-bordered border-primary" style="height: 120px; width: 1000px">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                </tbody>
-            </table>
+                    <table class="table-primary table-striped table-bordered border-primary" style="height: 80px; width: 1000px">
+                       
+                        <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Patient Nane</th>
+                            <th scope="col">Complain</th>
+                        </tr>
+                        </thead>
+                        <% for(let cite of cites) { %>
+                        <tbody>
+                        <tr>
+                         
+                            <td><%= cite.date %></td>
+                            <td><%= cite.time %></td>
+                            <td>name</td>
+                            <td><%= cite.complain %></td>
+                            
+                        </tr>               
+                        </tbody>
+                        <% } %>
+                    </table><br><br>
+                </div>
+                <div class="col-4 ">
+                    <a class="link" aria-current="page" href="/newappointement" style="background-color:rgb(209, 211, 235)">Add New Appointements</a>
+                </div>
             </div>
         </div>
-
+        
+    
+    
 </body>
 
 </html>
